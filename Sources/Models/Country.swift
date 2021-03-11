@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class Country: NSObject {
+@objcMembers open class Country: NSObject {
     
     // MARK: - Properties
     

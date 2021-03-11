@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class NKVPhonePickerTextField: TextFieldPatternFormat {
+@objcMembers open class NKVPhonePickerTextField: TextFieldPatternFormat {
     
     // MARK: - Interface
     
