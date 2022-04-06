@@ -1,8 +1,8 @@
 [
     {
-        "name": "emptyCountry",
+        "name": "None",
         "dial_code": "",
-        "code": "EMPTY",
+        "code": "_unknown",
         "format": "################"
     },
     {

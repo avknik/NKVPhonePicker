@@ -280,6 +280,10 @@ extension NKVPhonePickerTextField: CountriesViewControllerDelegate {
     public func countriesViewController(_ sender: CountriesViewController, didSelectCountry country: Country) {
         if isFlagFixed == false {
             self.country = country
+            if country.countryCode == "_unknown" {
+                flagView.flagButton.setImage(UIImage(named: "NoneFlag"), for: .normal)
+                plusLabel?.text = ""
+            }
         }
         countryPickerDelegate?.countriesViewController(sender, didSelectCountry: country)
     }

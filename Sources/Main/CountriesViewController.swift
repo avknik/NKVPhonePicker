@@ -161,6 +161,14 @@ extension CountriesViewController {
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.textLabel?.minimumScaleFactor = 0.5
         
+        if country.countryCode == "_unknown" {
+            cell.detailTextLabel?.text = ""
+            cell.textLabel?.text = "None"
+        }
+        else {
+            cell.detailTextLabel?.text = "+" + country.phoneExtension
+        }
+        
         cell.detailTextLabel?.text = "+" + country.phoneExtension
         
         // Setting custom font

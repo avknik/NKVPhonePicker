@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class NKVFlagView: UIView {
+@objcMembers open class NKVFlagView: UIView {
     
     // MARK: - Interface
     
@@ -23,6 +23,10 @@ open class NKVFlagView: UIView {
             self.flagButton.setImage(flagImage, for: .normal)
             currentPresentingCountry = newSettedCountry
             textField.presenter.enablePhoneFormat(for: newSettedCountry)
+        }
+        else {
+            currentPresentingCountry = Country.country(for: source)
+            self.flagButton.setImage(UIImage(named: "NoneFlag"), for: .normal)
         }
     }
     
