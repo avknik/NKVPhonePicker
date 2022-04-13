@@ -169,8 +169,6 @@ extension CountriesViewController {
             cell.detailTextLabel?.text = "+" + country.phoneExtension
         }
         
-        cell.detailTextLabel?.text = "+" + country.phoneExtension
-        
         // Setting custom font
         if let cellsFont = cellsFont {
             cell.textLabel?.font = cellsFont

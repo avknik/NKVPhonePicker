@@ -48,7 +48,11 @@ import UIKit
     
     /// If true the initial value would be + <current country phone code>, for example +1 for US.
     /// If false it would be just +.
-    public var setCurrentCountryInitially: Bool = true { didSet { country = setCurrentCountryInitially ? Country.currentCountry : nil }}
+    public var setCurrentCountryInitially: Bool = true {
+        didSet {
+            country = setCurrentCountryInitially ? Country.currentCountry : nil
+            
+        }}
     
     /// Set to true for languages where flag and + must be at the right. For example for Arabic.
     public var rightToLeftOrientation: Bool = false { didSet { presenter.isRightToLeftMode(on: rightToLeftOrientation) } }
@@ -179,7 +183,6 @@ import UIKit
         self.delegate = self
         flagView.flagButton.addTarget(self, action: #selector(presentCountriesViewController), for: .touchUpInside)
         self.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        
         presenter.isRightToLeftMode(on: false)
         
         if setCurrentCountryInitially {
@@ -279,12 +282,13 @@ import UIKit
 extension NKVPhonePickerTextField: CountriesViewControllerDelegate {
     public func countriesViewController(_ sender: CountriesViewController, didSelectCountry country: Country) {
         if isFlagFixed == false {
-            self.country = country
+            self.country = country            
             if country.countryCode == "_unknown" {
                 flagView.flagButton.setImage(UIImage(named: "NoneFlag"), for: .normal)
                 plusLabel?.text = ""
             }
         }
+        
         countryPickerDelegate?.countriesViewController(sender, didSelectCountry: country)
     }
 
